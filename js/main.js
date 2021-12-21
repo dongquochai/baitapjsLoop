@@ -139,10 +139,26 @@ document.getElementById("btnTaoTheDiv").onclick = function () {
     document.getElementById("txtTaoTheDiv").style.display = "block";
 }
 //Bài 7 : In số nguyên tố
-// document.getElementById("btnInsoN").onclick = function(){
-//     InsoN() ;
-// }
-// function InsoN(){
-//     var 
-//     for()
-// }
+document.getElementById("btnInsoN").onclick = function(){
+    InsoN() ;
+}
+function InsoN(){
+    var e = document.getElementById("inpInsoN").value;
+    for (var t = "", n = 1; n <= e; n++) {
+      if (checkSNT(n)) {
+        t += " " + n;
+      }
+    }
+    document.getElementById("txtInsoN").innerHTML = t;
+    document.getElementById("txtInsoN").style.display = "block";
+  }
+  
+  function checkSNT(e) {
+    if (e < 2) return false;
+    for (var t = 2; t <= Math.sqrt(e); t++) {
+      if (e % t == 0) {
+        return false;
+      }
+    }
+    return true;
+  }
